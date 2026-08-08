@@ -1,4 +1,4 @@
-# Ecohydrological Resilience in the Wari-Maro -- Monts Kouffé Landscape
+# Ecohydrological Resilience in the Wari-Maro - Monts Kouffé Landscape
 
 ## Overview
 
