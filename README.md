@@ -101,13 +101,9 @@ To characterize the dynamic stability of the coupled ecosystem–hydrological sy
 
 For each sub-watershed, the VAR model represents the temporal dependence among the system variables and provides a transition structure from which the dominant eigenvalue is extracted.
 
-The maximum modulus of the eigenvalues, 
-[
-\lambda_{\max},
-] 
-is used as an indicator of system stability.
+The maximum modulus of the eigenvalues, $\lambda_{max}$ is used as an indicator of system stability.
 
-Values of λmax closer to one indicate slower return dynamics, while values below one correspond to a locally stable dynamic system. Values equal to or above one indicate a loss of asymptotic recovery under the corresponding linearized dynamics.
+Values of $\lambda_{max}$ closer to one indicate slower return dynamics, while values below one correspond to a locally stable dynamic system. Values equal to or above one indicate a loss of asymptotic recovery under the corresponding linearized dynamics.
 
 The observed distribution of λmax across the dataset is:
 
@@ -128,25 +124,14 @@ The resulting stability metric is subsequently converted into a **recovery-time 
 
 The spatial variation in λmax is investigated using statistical models relating dynamic stability to static environmental characteristics.
 
-A multiple linear regression is first fitted:
-
-[
-\lambda_{\max}
-\sim SOM + Ksat + Alt_{moy}
-]
-
-The linear model explains approximately **18.2% of the variance** in λmax:
+A multiple linear regression is first fitted: $\lambda_{\max} \sim SOM + Ksat + Alt_{moy}$. The linear model explains approximately **18.2% of the variance** in $\lambda_{\max}$:
 
 * Adjusted R² = **0.180**
 * F-statistic = **65.08**
 * p < **2.2 × 10⁻¹⁶**
 
-A Generalized Additive Model (GAM) is then used to account for potentially nonlinear relationships:
-
-[
-\lambda_{\max}
-\sim s(SOM) + s(Ksat) + s(Alt_{moy})
-]
+A Generalized Additive Model (GAM) is then used to account for potentially nonlinear relationships: $ \lambda_{\max}
+\sim s(SOM) + s(Ksat) + s(Alt_{moy})$
 
 The GAM substantially improves model performance:
 
@@ -169,28 +154,15 @@ The central premise of this project is that ecosystem degradation should not be 
 A system can experience declining productivity, altered hydrological regulation, increasing disturbance, or climatic stress while also changing in its **dynamic capacity to recover from perturbations**.
 
 By combining long-term environmental observations with VAR-based stability metrics, this framework provides a way to examine both:
+**state change** and **dynamic stability**.
 
-**state change**
-
-and
-
-**dynamic stability**.
-
-The subsequent modelling of λmax against environmental gradients provides an additional step toward identifying the physical and ecological characteristics associated with differences in resilience across the landscape.
+The subsequent modelling of $\lambda_{\max}$ against environmental gradients provides an additional step toward identifying the physical and ecological characteristics associated with differences in resilience across the landscape.
 
 ---
 
 ## Scope and limitations
 
 Several limitations should be considered when interpreting the results.
-
-First, the annual time series are relatively short (**22 years**), which constrains the complexity of temporal models that can be robustly fitted at the individual sub-watershed level.
-
-Second, the VAR framework provides a linear approximation of the local dynamics of the multivariate system. Consequently, λmax should be interpreted as a **local dynamic-stability indicator**, rather than as a complete representation of ecological resilience.
-
-Third, the environmental-control analysis identifies statistical associations between static environmental characteristics and stability. These relationships should not automatically be interpreted as causal effects.
-
-Finally, remotely sensed and model-derived indicators inherit the uncertainties associated with their respective products and processing workflows.
-
-
-The repository is being progressively organized to improve reproducibility, documentation, and reuse of the analytical workflow.
+- Time-series length: $N = 22$ years limits the fitting of highly complex, lag-rich temporal structures.
+- Linearization: VAR(1) provides a local linear approximation of multivariate dynamics around an equilibrium.
+- Correlation vs Causality: Static predictors establish strong spatial associations with stability, but do not directly prove causal mechanisms.
