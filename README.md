@@ -130,8 +130,7 @@ A multiple linear regression is first fitted: $\lambda_{\max} \sim SOM + Ksat + 
 * F-statistic = **65.08**
 * p < **2.2 × 10⁻¹⁶**
 
-A Generalized Additive Model (GAM) is then used to account for potentially nonlinear relationships: $ \lambda_{\max}
-\sim s(SOM) + s(Ksat) + s(Alt_{moy})$
+A Generalized Additive Model (GAM) is then used to account for potentially nonlinear relationships: $\lambda_{\max} \sim s(SOM) + s(Ksat) + s(Alt_{moy})$
 
 The GAM substantially improves model performance:
 
