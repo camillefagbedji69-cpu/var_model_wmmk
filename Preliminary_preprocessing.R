@@ -5,7 +5,7 @@ library(trend)
 
 
 ## Import dataset 
-dataset <- read.csv("C:/Users/ACER/Desktop/JANUS_2026/Data series/SWV_serie.csv", 
+dataset <- read.csv("SWV_serie.csv", 
                     sep = ";")
 
 ## Annual dataset 
